@@ -23,6 +23,7 @@ const playerO = Player('Player 2', 'O');
 let currentPlayer = playerX;
 const cells = document.querySelectorAll('.cell');
 const status = document.querySelector('#statusMessage');
+const restartButton = document.querySelector(".restartButton");
 let running = true;
 
 function startGame() {
@@ -30,6 +31,18 @@ cells.forEach(cell => {
     cell.innerText = '';
     cell.addEventListener('click', cellClicked, { once: true });
 });
+
+function restartGame() {
+    board = ['','','','','','','','',''];
+    cells.forEach(cell=> {
+        cell.innerText = '';
+    cell.addEventListener('click', cellClicked, { once: true });
+    })
+    currentPlayer = playerX
+    let roundWon = false;
+    running = true;
+}
+restartButton.addEventListener("click", restartGame);
 
 currentPlayer = playerX;
 status.textContent = `${currentPlayer.name}'s turn`;

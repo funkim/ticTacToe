@@ -1,0 +1,26 @@
+#gameBoard{
+    display: grid;
+    grid-template-columns: repeat(3, 10vw);
+    height: auto;
+    margin: auto;
+}
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vw;
+    height: 10vh;
+    border: 2px solid;
+    font-size: 50px;
+    cursor: pointer;
+    text-align: center;
+} 
+
+.container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    justify-items: center
+    ;
+}
+
